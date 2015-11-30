@@ -30,6 +30,24 @@ function res = pinballSim()
         direction = -1;
     end
 
-    [T, R] = ode45(@sim, [0, 10], [0, 0, initYPos, initYVelo],options);
-    plot(R(:,1), R(:,3));
+    [T, R] = ode45(@sim, [0:0.1:10], [0, 0, initYPos, initYVelo],options);
+    
+    X = R(:,1); %a sequence of x position of pinball
+    Y = R(:,3); %y position
+    
+    minmax = [min(X)-10, max(X)+10, min(Y)-10, max(y)+20];
+    
+    for i=1:length(T)
+        clf;
+        axis(minmax);
+        hold on;
+        draw_func(X(i), Y(i));
+        drawnow;
+        pause(0.1);
+    end
+    
+    function draw_func(x, y)
+        plot(x, y, 'r.', 'MarkerSize', 20);
+    end
+    
 end
