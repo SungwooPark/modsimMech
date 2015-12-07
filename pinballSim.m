@@ -38,19 +38,7 @@ function res = pinballSim(xvel)
     X = R(:,1); %a sequence of x position of pinball
     Y = R(:,3); %y position
     
-    minmax = [min(X)-1, max(X)+1, min(Y), max(y)+0.5];
-    
-    for i=1:length(T)
-        clf;
-        axis(minmax);
-        hold on;
-        draw_func(X(i), Y(i));
-        drawnow;
-        pause(0.1);
-    end
-    
-    function draw_func(x, y)
-        plot(x, y,'r.', 'MarkerSize', 20);
-    end
+    hold on
+    plot(X,Y)
     
 end
