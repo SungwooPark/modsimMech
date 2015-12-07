@@ -1,0 +1,7 @@
+%for i=-20:20
+ %for degrees=135:-15:165
+  %  pinballSim(i/10, degrees);
+   %end
+%end
+pinballSim(-2, 135);
+line([-0.2 0.2],[0.14 0.14])

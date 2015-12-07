@@ -1,10 +1,13 @@
-function res = pinballSim(xvel)
+function res = pinballSim(xvel, angle)
     fieldSlope = 6.5; %in degrees
     m = 0.08; %kg, mass of pinball
     initXPos = 0;
-    initXVelo = xvel;
+    initXVelo = xvel + 2*sind(angle);
+    disp(initXVelo);
     initYPos = 0;
-    initYVelo = 2; %m/s
+    initYVelo = 2*cosd(angle); %m/s
+    disp(initYVelo);
+    
     g = 9.8;
     
     function res = sim(~,P)
@@ -14,8 +17,7 @@ function res = pinballSim(xvel)
         vy = P(4); %y velocity
         
         yForce = -g*sind(fieldSlope); %Force in y direction
-        disp(yForce)
-        %disp(yForce)
+        
         
         dxdt = vx;
         dvxdt = 0;
