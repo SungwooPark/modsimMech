@@ -1,6 +1,6 @@
-for i=-20:20
+for i=-10:10
  for degrees=-45:15:15
-    pinballSim(i/10, degrees);
+    pinballSim(i/5, degrees);
   end
 end
 
