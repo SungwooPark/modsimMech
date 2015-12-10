@@ -3,10 +3,10 @@ function res = pinballSim(xvel, angle)
     m = 0.08; %kg, mass of pinball
     initXPos = 0;
     initXVelo = xvel + 2*sind(angle);
-    disp(initXVelo);
+    %disp(initXVelo);
     initYPos = 0;
     initYVelo = 2*cosd(angle); %m/s
-    disp(initYVelo);
+    %disp(initYVelo);
     
     g = 9.8;
     
@@ -41,6 +41,6 @@ function res = pinballSim(xvel, angle)
     Y = R(:,3); %y position
     
     hold on
-    plot(X,Y)
+    plot(X,Y,'g')
     
 end
